@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>CIELO</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+       
+      <script th:src="@{/main.js}"></script>
+      <link th:href="@{/main.css}" rel="stylesheet" />
+       
+      <head>
+   <body ng-app="ExtratoManagement" ng-controller="ExtratoController">
+      <h3>
+         CIELO - Extrato de Lan&ccedil;amentos em Conta
+      </h3>
+    
+      <br/>
+      
+      <table border="1">
+         <tr>
+            <th>Data do lan&ccedil;amento </th>
+            <th>Descri&ccedil;&atilde;o</th>
+            <th>N&uacute;mero</th>
+            <th>Situa&ccedil;&atilde;o</th>
+            <th>Data de confirma&ccedil;&atilde;o</th>
+            <th>Dados banc&aacute;rios</th>
+            <th>Valor final</th>
+         </tr>
+         <!-- $scope.employees -->
+         <tr ng-repeat="extrato in extratoLancamentos">
+            <td> {{ extrato.dataLancamento }}</td>
+            <td> {{ extrato.nomeTipoOperacao }}</td>
+            <td >{{ extrato.numeroRemessaBanco }}</td>
+            <td >{{ extrato.nomeSituacaoRemessa }}</td>
+            <td >{{ extrato.dataEfetivaLancamento }}</td>
+            <td >{{ extrato.domicilioBancario }}</td>
+            <td >{{ extrato.valorLancamentoRemessa }}</td>
+         </tr>
+      </table>
+   </body>
+</html>
